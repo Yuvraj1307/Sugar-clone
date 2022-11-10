@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+    <style>
+
+        /* navigation bar */
+          /* navigation area */
+          #nav{
+            display: flex;
+            background-color: black;
+            
+            height: 80px;
+            width: 100%;
+            justify-content: space-evenly;
+             
+            
+        }
+        #nav>div:nth-child(1){
+            margin-left: -100px;
+            margin-top: 10px;
+        }
+        #nav>div:nth-child(2){
+        width: 50%;
+        display: flex;
+        
+        }
+        #nav>div:nth-child(2)>input{
+            width: 70%;
+            height: 50%;
+            margin-top: 20px;
+            background-color: rgb(46, 43, 43);
+            color: white;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            padding-left: 30px;
+            
+        }
+        #nav>div:nth-child(2)>button{
+            width: 12%;
+            height: 56%;
+            margin-top: 21px;
+            border: 0px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background-color: white;
+        }
+        #nav>div:nth-child(3)>button:nth-child(1){
+            width: 40%;
+            height: 56%;
+           
+             font-size: 17px;
+            
+            background-color: black;
+            color: white;
+        }
+        .d3{
+            margin-top: 20px;
+            height: 50%;
+            width: 10%;
+             
+            display: flex;
+            justify-content: space-evenly;
+            margin-left: -80px;
+        }
+         .d3>button{
+            margin-top: 10px;
+         }
+        
+        #nav>div:nth-child(4){
+           
+            width: 6%;
+            height: 50%;
+            margin-top: 25px;
+        }
+        #nav>div:nth-child(4)>button{
+            background-color: black;
+            color: white;
+            font-size: 18px;
+            height: 20px;
+            font-size: 30px;
+        }
+        
+        #nav+div{
+            background-color: rgb(27, 26, 26);
+            height: 60px;
+            display: flex;
+        }
+        #nav+div>button{
+            margin-left: 50px;
+            background-color: rgb(27, 26, 26);
+            color: white;
+            border: 0px;
+        }
+        #nav>div:nth-child(4)>button:nth-child(2)>a{
+            color: black;
+        }
+        a{
+            color: white;
+        }
+      /* Write all necessery css here  */
+      #cart-container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+         gap:2px;
+        
+        border: 1px solid rgb(212, 208, 208);
+        border-radius: 10px;
+      }
+      #cart-container>div{
+        display: flex;
+        /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+        /* border: 1px solid rgba(162, 159, 159, 0.626); */
+        border-radius: 10px;
+        width: 50%;
+        background-color: white;
+      }
+      #cart-container>div>p{
+        margin-left: 30px;
+      }
+      #cart-container>div>img{
+        width: 50px;
+        margin-left: 30px;
+      }
+      #cart-container>div>button{
+        margin-left: 50px;
+        margin-right: 10px;
+        height: 25px;
+        margin-top: 1.5%;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        
+      }
+/* 
+      sibscribe area */
+      #subscribe{
+        height: 300px;
+        width: 100%;
+        border: 1px solid rgb(237, 233, 233);
+        margin-top: 70px;
+        text-align: center;
+        padding-top: 100px;
+     }
+     #subscribe>div>input{
+        width: 30%;
+        height: 40px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        padding-left: 20px;
+     }
+     #subscribe>div>button{
+        height: 46px;
+        width: 7%;
+       background-color: black;
+       color: white;
+       font-size: 19px;
+       border-bottom-right-radius: 10px;
+       border-top-right-radius: 10px;
+     }
+     hr{
+        margin-top: 100px;
+        
+     }
+     
+   /* bottom area */
+   #bottom{
+        height: 545px;
+        width: 100%;
+        border: 1px solid rgb(237, 233, 233);
+        
+     }
+     #bottom>div:nth-child(1){
+        height: 80px;
+        width: 100%;
+        background-color: black;
+     }
+     #bottom>div:nth-child(1)>h2{
+        text-align: center;
+        font-size: 40px;
+        color: white;
+        margin-top: 2px;
+        padding-top: 40px;
+       
+     }
+
+     #bottom>div:nth-child(2){
+        height: 80px;
+        width: 100%;
+        border: 1px solid black;
+        text-align: center;
+        background-color: black;
+     }
+     #bottom>div:nth-child(2)>img{
+        margin: 30px;
+     }
+     #bottom>div:nth-child(3){
+        height: 80px;
+        width: 100%;
+        border: 1px solid black;
+        text-align: center;
+        background-color: black;
+padding-bottom: 30px;
+     }
+     #bottom>div:nth-child(3)>button{
+        font-size: 20px;
+        margin: 40px;
+         color: white;
+         background-color: black;
+         
+     }
+     #bottom>div:nth-child(4){
+        display: flex;
+        justify-content: space-evenly;
+        background-color: black;
+     }
+    #bottom>div>div>h3{
+        color: white;
+     }
+     #bottom>div>div>h5{
+        color: white
+     }
+     #bottom>div>div>p{
+        color: white;
+     }
+     a{
+        color: white;
+     }
+     #bottom>div:nth-child(5){
+        height: 100px;
+        width: 100%;
+        border: 1px solid black;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        align-items: center;
+         
+     }
+     body{
+        background-color: rgb(236, 232, 232);
+     }
+     #card{
+        display: flex;
+     }
+     #card>div:nth-child(1){
+        margin-top: 20px;
+        width: 40%;
+       
+     }
+     #card>div:nth-child(1)>div{
+          width: 100%;
+     }
+     #card>div:nth-child(2){
+        /* margin-top: px; */
+        width: 40%;
+        margin-left: 200px;
+     }
+     #card>div:nth-child(2)>div{
+        width: 100%;
+        border: 1px solid rgb(160, 156, 156);
+        background-color: white;
+        border-radius: 10px;
+        padding-left: 30px;
+
+     }
+     #card>div:nth-child(2)>div>div{
+          display: flex;
+          width: 100%;         
+          
+          justify-content: space-between;
+          
+     }
+     #card>div:nth-child(2)>div>div>span{
+        margin-right: 40px;
+        margin-top: 10px;
+     }
+
+/* //asdsadsadsa */
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <h1></h1>
+     
+      
+    </div>
+    <div id="navcont">
+        <div id="nav">
+            <div> <a href="./index.html"><img src="picfolder\logo.png"/></a></div>
+            <div><input type="text" placeholder="Try 'Liquid Lipstick'"/><button>search</button></div>
+            <div class="d3"> <button><a href="signup.html">Login/Register</a></button></div>
+            <div><button>♡</button><button><a href="cart.html">&#128717;&#65039;</a></button></div>
+        </div>
+        <div>
+            <button>Makeup</button><button>Brushes</button><button>Skincare</button><button>Gifting</button><button>Blog</button><button>Offers</button><button>Stores</button>
+        </div>
+    </div>
+    <h3>CART SUMMARY</h3>
+      <div id="card">  
+               <div id="cart-container">
+      <!-- Here Append All the cart Products  -->
+               </div>
+              
+               <div>
+                <h3>price details</h3>
+                  <div>
+                      <div><p id="total">Subtotal  </p> <span id="cart-subtotal">0</span></div>
+                      <div><p id="tax">tax</p><span id="cart-tax">0</span></div>
+                      <div><p id="total">total </p><span id="cart-total">0</span></div>                  
+                  </div>
+               </div>
+      </div>
+    <div id="subscribe">
+        <h2>----LET’S STAY IN TOUCH----</h2>
+        <p>Get the latest beauty tips straight to your inbox. Can’t wait to connect!</p>
+        <div><input type="text" placeholder="Enter Email"/><button>subscribe</button></div>
+   </div>
+   <div id="bottom">
+        <div><h2>Sault</h2></div>
+       <div>
+           <img src="picfolder\face.png" alt=""><img src="picfolder\twit.png" alt=""><img src="picfolder\you.png" alt=""><img src="picfolder\twi.png" alt=""><img src="picfolder\insta.png" alt=""><img src="picfolder\email.png" alt=""><img src="" alt="">
+       </div>
+       <div>
+           <button>Stores</button><button>Terms & Conditions</button><button>Returns</button><button>FAQs</button><button>About Us</button>
+       </div>
+       <div>
+           <div>
+               <h3>GET IN TOUCH</h3>
+               <h5>Call us at</h5>
+               <p>1800-209-9933</p>
+               <p>Monday to Friday : 9 AM to 7 PM
+               </p>
+           </div>
+           <div>
+               <h5>Support</h5>
+               <p>hello@sugarcosmetics.com</p>
+           </div>
+           <div>
+               <h5>Careers</h5>
+               <p>We're hiring!</p>
+           </div>
+           <div>
+               <h5>Press & Media</h5>
+               <p>pr@sugarcosmetics.com</p>
+           </div>
+           <div>
+               <h5>Influencer Collab</h5>
+               <p>Join Us</p>
+           </div>
+       </div>
+       <div>
+           <div><h5>GET THE NEW SUGAR APP TODAY!</h5><p>Tap into a better shopping experience.</p></div><div><a href="https://sugarcosmetics.app.link/WebFApp"><img width="100px" src="https://in.sugarcosmetics.com/playstore.png" alt=""></a></div>
+           <div><a href="https://sugarcosmetics.app.link/WebFApp"><img width="100px" src="https://in.sugarcosmetics.com/apple-store.png" alt=""></a></div>
+       </div>
+   </div>
+  </body>
+  <script>
+    // Write all necessery JS here 
+    
+    let cartItem=JSON.parse(localStorage.getItem("cart"))||[]
+    function card(arr){
+      document.getElementById("cart-container").innerHTML=""
+      
+        arr.forEach((el,i)=>{
+            let card=document.createElement("div")
+            let image=document.createElement("img")
+            image.src=el.avatar
+             
+             let detail=document.createElement("p")
+             detail.innerHTML=el.description;
+             
+             let price=document.createElement("p")
+             price.innerText=el.price
+           let btn=document.createElement("button");
+           btn.innerText="remove";
+           btn.addEventListener("click",(el,i)=>{
+            remove(el,i)
+           })
+           card.append(image,detail,price,btn);
+           document.getElementById("cart-container").append(card)
+        })
+    }
+    card(cartItem)
+    function remove(el,index){
+      cartItem.splice(index,1)
+      localStorage.setItem("cart",JSON.stringify(cartItem))
+      card(cartItem)
+      total()
+      subtotal()
+      tax()
+    }
+    function subtotal(){
+      let sum=cartItem.reduce((ac,el)=>{
+        return ac+Number(el.price)
+      },0)
+      
+      document.getElementById("cart-subtotal").innerText=sum;
+    }
+    subtotal()
+
+    function tax(){
+        let tax=cartItem.reduce((ac,el)=>{
+        let X= ac+Number(el.price);
+        return (X*18)/100
+      },0)
+      document.getElementById("cart-tax").innerText=tax
+    }
+    tax();
+
+
+    function total(){
+        let total=cartItem.reduce((ac,el)=>{
+        let X= ac+Number(el.price);
+        let Y=(X*18)/100+X
+        return Y
+      },0)
+      document.getElementById("cart-total").innerText=total
+    }
+    total()
+   
+  </script>
+</html>

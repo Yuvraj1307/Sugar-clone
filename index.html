@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HOME</title>
     <style>
 
         /* navigation area */
@@ -15,7 +15,7 @@
             height: 80px;
             width: 100%;
             justify-content: space-evenly;
-            box-shadow: rgb(234, 237, 240) 0px 1px 2px 0px, rgb(255, 255, 255) 0px 1px 3px 1px;
+             
             
         }
         #nav>div:nth-child(1){
@@ -50,7 +50,7 @@
         #nav>div:nth-child(3)>button:nth-child(1){
             width: 40%;
             height: 56%;
-             /* border-color:  white; */
+           
              font-size: 17px;
             
             background-color: black;
@@ -68,16 +68,7 @@
          .d3>button{
             margin-top: 10px;
          }
-        #nav>div:nth-child(3)>button:nth-child(2){
-            width: 40%;
-            height: 56%;
-            
-            font-size: 15px;
-            /* border-color:  white; */
-            
-            background-color: black;
-            color: white;
-        }
+        
         #nav>div:nth-child(4){
            
             width: 6%;
@@ -103,14 +94,32 @@
             color: white;
             border: 0px;
         }
+        #nav>div:nth-child(4)>button:nth-child(2)>a{
+            color: black;
+        }
 
         /* slide area 1 */
         #slidDiv{
             height: 400px;
             width: 100%;
-            border: 1px solid red;
+            border: 1px solid black;
+            margin-bottom: 80px;
         }
-
+        .swiper{
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide img{
+            width: 100%;
+            height: 100%;
+        }
+        .swiper .swiper-button-prev, .swiper .swiper-button-next{
+            background-color: rgb(79, 77, 77);
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 60px;            
+        }
         /* slide area 2 */
        #slideDiv2{
         background-image: url("https://static.vecteezy.com/system/resources/previews/000/549/601/non_2x/abstract-background-blue-waves-particles-with-copy-space-for-your-banner-website-or-business-vector-illustration-modern-design.jpg");
@@ -186,6 +195,7 @@
         border: 1px solid rgb(237, 233, 233);;
         text-align: center;
         
+        
        }
        #video>div{
         display: flex;
@@ -233,10 +243,12 @@
         
      }
      
+
+     /* bottom area */
      #bottom{
-        height: 500px;
+        height: 545px;
         width: 100%;
-        border: 1px solid red;
+        border: 1px solid rgb(237, 233, 233);
         
      }
      #bottom>div:nth-child(1){
@@ -256,7 +268,7 @@
      #bottom>div:nth-child(2){
         height: 80px;
         width: 100%;
-        border: 1px solid blue;
+        border: 1px solid black;
         text-align: center;
         background-color: black;
      }
@@ -266,7 +278,7 @@
      #bottom>div:nth-child(3){
         height: 80px;
         width: 100%;
-        border: 1px solid blue;
+        border: 1px solid black;
         text-align: center;
         background-color: black;
 padding-bottom: 30px;
@@ -283,34 +295,109 @@ padding-bottom: 30px;
         justify-content: space-evenly;
         background-color: black;
      }
-     h3{
+    #bottom>div>div>h3{
         color: white;
      }
-     h5{
+     #bottom>div>div>h5{
         color: white
      }
-     p{
+     #bottom>div>div>p{
         color: white;
      }
+     a{
+        color: white;
+     }
+     #bottom>div:nth-child(5){
+        height: 100px;
+        width: 100%;
+        border: 1px solid black;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        align-items: center;
+         
+     }
+
+     #products{
+        /* height: 600px;
+        width: 100%;
+        border: 1px solid red; */
+        margin-top: 100px;
+        margin-left: 80px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 40px;
+     } 
+     #products>div{
+        width: 80%;
+        height: 400px;
+        background-color: white;
+        border-radius: 20px;
+        text-align: center;
+     }
+     #products>div>img{
+        width: 70%;
+        height: 60%;
+     }
+     #products>div>button{
+        margin-right: 10px;
+     }
+     #products>div>button:nth-child(4){
+        background-color: white;
+        border-radius: 10px;
+        font-size: 17px;
+        height: 30px;
+        width: 45px;
+     }
+     #products>div>button:nth-child(5){
+         width: 120px;
+         height: 30px;
+         background-color: black;
+         border-radius: 10px;
+         color:white;
+     }
+     h2{text-align: center;
+   }
     </style>
     <meta charset="UTF-8">
+    <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 </head>
 <body>
  <div id="navcont">
     <div id="nav">
-        <div><img src="logo.png"/></div>
+        <div><img src="picfolder\logo.png"/></div>
         <div><input type="text" placeholder="Try 'Liquid Lipstick'"/><button>search</button></div>
-        <div class="d3"><button>Login</button>/<button>Register</button></div>
-        <div><button>♡</button><button>&#128717;&#65039;</button></div>
+        <div class="d3"> <button><a href="signup.html">Login/Register</a></button></div>
+        <div><button>♡</button><button><a href="cart.html">&#128717;&#65039;</a></button></div>
     </div>
     <div>
         <button>Makeup</button><button>Brushes</button><button>Skincare</button><button>Gifting</button><button>Blog</button><button>Offers</button><button>Stores</button>
     </div>
 </div>
 <div id="slidDiv">
-    <!-- for slide show of images -->
-    <img/>
-    <br>
+    
+<div class="swiper">
+     
+    <div class="swiper-wrapper">
+     
+      <div class="swiper-slide"><img src="https://d32baadbbpueqt.cloudfront.net/Homepage/46ff1a05-2660-4fdc-83e4-fb5cfc36f102.jpg"/></div>
+      <div class="swiper-slide"><img src="https://d32baadbbpueqt.cloudfront.net/Homepage/1fb4eae2-6719-4f1f-b80e-efda1cf48362.jpg"/></div>
+      <div class="swiper-slide"><img src="https://d32baadbbpueqt.cloudfront.net/Homepage/1fa29c9d-b7b6-4aa9-ac54-a2195c10fc63.jpg"/></div>
+      <div class="swiper-slide"><img src="https://d32baadbbpueqt.cloudfront.net/Homepage/b69d2fc2-53f5-45ed-8e89-8dcd108ed2b6.jpg"/></div>
+      <div class="swiper-slide"><img src="https://d32baadbbpueqt.cloudfront.net/Homepage/1fa29c9d-b7b6-4aa9-ac54-a2195c10fc63.jpg"/></div>
+      <div class="swiper-slide"><img src="https://d32baadbbpueqt.cloudfront.net/Homepage/9f8fe6f9-3ebe-4d1b-9b15-d5e5e642868b.jpg"/></div>
+    
+    </div>
+    
+    <div class="swiper-pagination"></div>
+  
+    
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    
+  </div>
 
 
 </div>
@@ -321,7 +408,7 @@ padding-bottom: 30px;
               <img width="200px" src="https://cdn.shopify.com/s/files/1/0906/2558/products/1_529c20ee-c872-4029-9702-8580d7b9a66f.jpg?v=1640178644"/>
               <p>ace of face soundation stick</p>
               <h4>$999</h4>
-              <button class="btn1">Like</button><button class="btn2">add to cart</button>
+              <button class="btn1">Like</button><button   class="btn2">add to cart</button>
             </div>
             <div>
                 <img width="200px" src="https://cdn.shopify.com/s/files/1/0906/2558/products/WBG1_09f0cf83-792a-4185-8882-5e5e6909a459.jpg?v=1657814596"/>
@@ -376,6 +463,14 @@ padding-bottom: 30px;
      </div>
     </div>         
 </div>
+<br>
+<br>
+<br>
+<h2>----JUST IN----</h2>
+<div id="products">
+   
+
+</div>
 <hr>
 <div id="subscribe">
      <h2>----LET’S STAY IN TOUCH----</h2>
@@ -385,7 +480,7 @@ padding-bottom: 30px;
 <div id="bottom">
      <div><h2>Sault</h2></div>
     <div>
-        <img src="face.png" alt=""><img src="twit.png" alt=""><img src="you.png" alt=""><img src="twi.png" alt=""><img src="insta.png" alt=""><img src="email.png" alt=""><img src="" alt="">
+        <img src="picfolder\face.png" alt=""><img src="picfolder\twit.png" alt=""><img src="picfolder\you.png" alt=""><img src="picfolder\twi.png" alt=""><img src="picfolder\insta.png" alt=""><img src="picfolder\email.png" alt=""><img src="" alt="">
     </div>
     <div>
         <button>Stores</button><button>Terms & Conditions</button><button>Returns</button><button>FAQs</button><button>About Us</button>
@@ -415,7 +510,35 @@ padding-bottom: 30px;
             <p>Join Us</p>
         </div>
     </div>
-    <div></div>
+    <div>
+        <div><h5>GET THE NEW SUGAR APP TODAY!</h5><p>Tap into a better shopping experience.</p></div><div><a href="https://sugarcosmetics.app.link/WebFApp"><img width="100px" src="https://in.sugarcosmetics.com/playstore.png" alt=""></a></div>
+        <div><a href="https://sugarcosmetics.app.link/WebFApp"><img width="100px" src="https://in.sugarcosmetics.com/apple-store.png" alt=""></a></div>
+    </div>
 </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+        autoplay:{
+            delay:3000,
+            disableOnInteraction: false,
+        },
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  
+});
+</script>
+<script src="index.js"></script>
 </body>
 </html>
+ 
