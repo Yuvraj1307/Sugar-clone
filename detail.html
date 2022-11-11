@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            display: flex;
+        }
+         body>div:nth-child(1){
+            height: 840px;
+            width: 40%;
+            
+         }
+         body>div:nth-child(2){
+            height: 840px;
+            width: 60%;
+           
+            background-image: url("https://live.staticflickr.com/5538/13940519593_3c5a870b56.jpg");
+            background-size: cover;
+            text-align: center;
+         }
+         body>div:nth-child(2)>h1{
+            font-size: 150px;
+            color: rgb(221, 217, 217)
+         }
+         body>div:nth-child(2)>h4{
+            font-size: 27px;
+            margin-top: -80px;
+         }
+         body>div:nth-child(2)>div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            height: 210px;
+         }
+         body>div:nth-child(2)>div>input{
+            width: 30%;
+            height: 30%;
+            border-collapse: collapse;
+            border-radius: 10px;
+            padding-left: 10px;
+            margin: 10px;
+         }
+         body>div:nth-child(2)>p{
+            margin-top: 50px;
+         }
+         body>div:nth-child(2)>button{
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            height:40px;
+            width: 120px;
+            margin-top: 50px;
+         }
+         #btn{
+            background-color: rgb(255, 238, 238);
+            color: white;
+            border-radius: 10px;
+            height:40px;
+            width: 120px;
+            margin-top: 100px;
+            border: 0px;
+         }
+    </style>
+</head>
+<body>
+    <div><img  width="100%" src="picfolder\back.png"/></div>
+    <div id="main">
+        <a href="./index.html">home</a>
+        <h1>Hi!</h1>
+        <h4>Fill your details here</h4>
+            <div>
+                <input id="name" type="text" placeholder="NAME"/>
+                <input id="address" type="text" placeholder="ADD."/>
+                <input id="email" type="text" placeholder="Email"/>
+            </div>  
+        <p>Registering for this site allows you to access your order status and history. Just fill in the above fields, and we'll get a new account set up for you in no time. We will only ask you for information necessary to make the purchase process faster and easier.</p>
+        <button id="btn1" onClick="submit()">SUBMIT</button>
+        <button id="btn" onClick="enterOTP()">ENTER OTP</button>
+        <!-- <button id="page" onClick="details()">details</button> -->
+    
+</body>
+</html>
+<script>
+      let NAME=document.querySelector("#name")
+      let ADD=document.querySelector("#address")
+      let MAIL=document.querySelector("#email")
+      
+      let detArr=JSON.parse(localStorage.getItem("details"))||[];
+
+
+     
+      
+      function submit(el){
+       
+         let name=NAME.value
+         let add=ADD.value
+         let mail=MAIL.value
+
+
+         let result=detArr.filter(function(e){
+         if(e.mail==mail){
+            return mail 
+         }        
+     })
+     
+      if(name==""||add==""||mail==""){
+        alert("Please enter details")
+     
+      }else if(result.length!=0) {
+           alert("Please choose another email")
+        
+        
+      }else
+      {
+
+
+        let detObj={
+          name,
+           add,
+          mail
+          };
+        detArr.push(detObj)
+        localStorage.setItem("details",JSON.stringify(detArr));
+        
+
+         alert("Account is created")
+         let btn=document.querySelector("#btn")
+         btn.innerHTML="<a href='index.html'>back</a>"
+         btn.style.backgroundColor="grey"
+          
+         btn1.remove()
+         
+        document.querySelector("#name").remove()
+          document.querySelector("#address").remove()
+         document.querySelector("#email").remove()
+         document.querySelector("h4").innerText="Account is created"
+      }           
+}
+
+
+</script>
