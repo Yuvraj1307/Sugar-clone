@@ -6,6 +6,8 @@ async function fetchData(){
   }
 
 
+ 
+
 
       function card(arr){
          
@@ -27,7 +29,7 @@ async function fetchData(){
               addCart(el)
              })
              btn2.addEventListener("click",()=>{
-                addCart(el)
+                addFav(el)
                })
              card.append(image,detail,price,btn2,btn1);
              document.getElementById("products").append(card)
@@ -35,7 +37,7 @@ async function fetchData(){
       }
       fetchData()
 
-
+    
       function addCart(el){
         let arr=JSON.parse(localStorage.getItem("cart"))||[]
         let arr2=arr.filter((e)=>{
@@ -51,11 +53,36 @@ async function fetchData(){
          }
        
       }
-       let filtBtn=document.querySelector("#filter")
-         filtBtn.addEventListener("change",(el)=>{
-          fetchData1()
-         })
-   
 
-          
+      function addFav(el){
+        let arr=JSON.parse(localStorage.getItem("fav"))||[]
+        let arr2=arr.filter((e)=>{
+          return e.id==el.id
+        })
+         if(arr2.length!=0){
+          alert("Product Already in wishlist")
+         }else{
+          arr.push(el)
+        
+        localStorage.setItem("fav", JSON.stringify(arr))
+        alert("Product Added To wishlist")
+         }
+      }
+      //  let filtBtn=document.querySelector("#filter")
+      //    filtBtn.addEventListener("change",(el)=>{
+      //     fetchData1()
+      //    })
+   
+      
+      function search(){
+            
+        let val=document.getElementById("search").value
+        console.log(val)
+        let newData=arr.filter(function(elem){
+          if(elem.description==val){
+            console.log(newData)
+          }
+        })
+        
+      }
  

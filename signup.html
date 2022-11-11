@@ -47,19 +47,90 @@
             width: 120px;
             margin-top: 100px;
          }
+         #btn{
+            background-color: rgb(255, 238, 238);
+            color: white;
+            border-radius: 10px;
+            height:40px;
+            width: 120px;
+            margin-top: 100px;
+            border: 0px;
+         }
+         #page{
+            background-color: rgb(255, 238, 238);
+            color: white;
+            border-radius: 10px;
+            height:40px;
+            width: 120px;
+            margin-top: 100px;
+            border: 0px;
+         }
 
     </style>
 </head>
 <body>
     <div><img  width="100%" src="picfolder\back.png"/></div>
-    <div>
+    <div id="main">
         <a href="./index.html">home</a>
         <h1>Hi!</h1>
         <h4>Sign Up Using Phone</h4>
-        <input type="number" placeholder="+91"/>
+        <input id="NUM" type="text" placeholder="+91"/>
         <p>Registering for this site allows you to access your order status and history. Just fill in the above fields, and we'll get a new account set up for you in no time. We will only ask you for information necessary to make the purchase process faster and easier.</p>
-        <button>SEND ME OTP</button>
+        <button   id="btn1" onClick="OTP()">SEND ME OTP</button>
+        <button  id="btn" onClick="enterOTP()">ENTER OTP</button>
+        <button id="page" onClick="details()">details</button>
     
     </div>
 </body>
 </html>
+<script>
+   let num=document.querySelector("#NUM");
+   function OTP(){
+      let val=+num.value;
+       if(val==1023456789){
+         alert("your OTP is 123456")
+          let btn=document.querySelector("#btn")
+             btn.innerHTML="ENTER OTP"
+            btn.style.backgroundColor="black"
+            btn.style.color="white"
+            document.querySelector("#NUM").value="";
+            let btn2=document.querySelector("#btn1")
+            btn2.remove()
+          
+       }else if(val==""){
+         alert("Please Enter Number")
+       }
+       else{
+         alert("Invalid Number")
+       }
+      
+      console.log(val)
+   }
+   function enterOTP(){
+     let otp=+num.value
+      
+      if(otp==123456){
+         alert("OTP is correct")
+         let btn=document.querySelector("#page")
+         btn.innerHTML="<a href='detail.html'>DETAILS</a>"
+         btn.style.backgroundColor="white"
+         btn.style.color="white"
+         let btn1=document.querySelector("#btn")
+         let btn2=document.querySelector("#btn1")
+         let box=document.querySelector("#NUM")
+            btn1.remove()
+            btn2.remove()
+            box.remove()
+      }else if(otp==""){
+         alert("please Enter OTP")
+      }
+      else{
+         alert("wrong OTP")
+        
+           
+      }
+   }
+   function details(){
+
+   }
+</script>
