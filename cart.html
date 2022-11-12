@@ -377,16 +377,20 @@ padding-bottom: 30px;
              price.innerText=el.price
            let btn=document.createElement("button");
            btn.innerText="remove";
+           let btn2=document.createElement("button")
+           btn2.innerHTML="<a href='buy.html' >buy <a>"
            btn.addEventListener("click",(el,i)=>{
             remove(el,i)
            })
-           card.append(image,detail,price,btn);
+           card.append(image,detail,price,btn, btn2);
            document.getElementById("cart-container").append(card)
         })
     }
     card(cartItem)
-    function remove(el,index){
-      cartItem.splice(index,1)
+    function remove(el,i){
+      
+      cartItem.splice(i,1)
+    
       localStorage.setItem("cart",JSON.stringify(cartItem))
       card(cartItem)
       total()

@@ -34,6 +34,8 @@ async function fetchData(){
              card.append(image,detail,price,btn2,btn1);
              document.getElementById("products").append(card)
           })
+
+         
       }
       fetchData()
 
@@ -68,21 +70,5 @@ async function fetchData(){
         alert("Product Added To wishlist")
          }
       }
-      //  let filtBtn=document.querySelector("#filter")
-      //    filtBtn.addEventListener("change",(el)=>{
-      //     fetchData1()
-      //    })
-   
       
-      function search(){
-            
-        let val=document.getElementById("search").value
-        console.log(val)
-        let newData=arr.filter(function(elem){
-          if(elem.description==val){
-            console.log(newData)
-          }
-        })
-        
-      }
  
