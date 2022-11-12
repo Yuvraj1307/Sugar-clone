@@ -84,10 +84,23 @@
 </body>
 </html>
 <script>
+    //&& val2==1023456789
    let num=document.querySelector("#NUM");
+   let number=JSON.parse(localStorage.getItem("number"))||[];
    function OTP(){
-      let val=+num.value;
-       if(val==1023456789){
+      let val=num.value;
+     // console.log(val.length)
+      val2=Number(val)
+        if(val.length==10 ){
+         let result=number.filter(function(e){
+         if(e==val2){
+            return val2 
+         }        
+     })
+    // console.log(result)
+          if(result.length==0){
+            number.push(val2)
+        localStorage.setItem("number",JSON.stringify(number));
          alert("your OTP is 123456")
           let btn=document.querySelector("#btn")
              btn.innerHTML="ENTER OTP"
@@ -96,6 +109,10 @@
             document.querySelector("#NUM").value="";
             let btn2=document.querySelector("#btn1")
             btn2.remove()
+          }else{
+            alert("Account is already created")
+          }
+        
           
        }else if(val==""){
          alert("Please Enter Number")
@@ -104,7 +121,7 @@
          alert("Invalid Number")
        }
       
-      console.log(val)
+     // console.log(val)
    }
    function enterOTP(){
      let otp=+num.value
