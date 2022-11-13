@@ -19,7 +19,7 @@
             
         }
         #nav>div:nth-child(1){
-            margin-left: -100px;
+            
             margin-top: 10px;
         }
         #nav>div:nth-child(2){
@@ -47,27 +47,27 @@
             border-bottom-right-radius: 10px;
             background-color: white;
         }
-        #nav>div:nth-child(3)>button:nth-child(1){
-            width: 40%;
+        #nav>div:nth-child(3)>button{
+            width: 60%;
             height: 56%;
            
-             font-size: 17px;
+             font-size: 10px;
             
             background-color: black;
             color: white;
         }
         .d3{
-            margin-top: 20px;
+            
             height: 50%;
-            width: 10%;
-             
+            width: 9%;
+            
             display: flex;
-            justify-content: space-evenly;
-            margin-left: -80px;
+            justify-items: center;
+            margin-top: 20px;
+            
         }
-         .d3>button{
-            margin-top: 10px;
-         }
+         
+         
         
         #nav>div:nth-child(4){
            
@@ -78,9 +78,9 @@
         #nav>div:nth-child(4)>button{
             background-color: black;
             color: white;
-            font-size: 18px;
-            height: 20px;
-            font-size: 30px;
+            font-size: 10px;
+            height: 5%;
+            
         }
         
         #nav+div{
@@ -145,6 +145,9 @@
         text-align: center;
          
        }
+       #img{
+        width: 70%;
+       }
        #slideDiv2>div>div{
         width: 20%;
         height: 100%;
@@ -198,9 +201,10 @@
         
        }
        #video>div{
-        display: flex;
+        display: grid;
         height: 86%;
         width: 100%;
+        grid-template-columns: repeat(4,1fr);
         border: 1px solid rgb(237, 233, 233);;
        }
        #video>div>div{
@@ -330,15 +334,16 @@ padding-bottom: 30px;
         gap: 40px;
      } 
      #products>div{
-        width: 80%;
-        height: 400px;
+        /* width: 80%;
+        height: 400; */
         background-color: white;
         border-radius: 20px;
         text-align: center;
+        padding-bottom: 10px;
      }
      #products>div>img{
         width: 70%;
-        height: 60%;
+        height: 40%;
      }
      #products>div>button{
         margin-right: 10px;
@@ -349,6 +354,7 @@ padding-bottom: 30px;
         font-size: 17px;
         height: 30px;
         width: 45px;
+        
      }
      #products>div>button:nth-child(5){
          width: 120px;
@@ -359,6 +365,102 @@ padding-bottom: 30px;
      }
      h2{text-align: center;
    }
+   @media all and(min-width:600px)and(max-width:1166px){
+    /* #nav{
+        width: 60%;
+    } */
+    #nav>div:nth-child(4)>button{
+        font-size: 5px;
+    }
+    
+
+   }
+   @media all and (min-width:600px) and (max-width:900px) {
+    #products{
+        
+        grid-template-columns: repeat(3,1fr);
+        gap: 40px;
+     } 
+   }
+   @media all and (min-width:10px) and (max-width:599px) {
+    #products{
+        
+        grid-template-columns: repeat(2,1fr);
+        gap: 40px;
+     } 
+   }
+
+
+   
+
+
+   @media all and(min-width:600px)and(max-width:1166px){
+    /* #nav{
+        width: 60%;
+    } */
+    #slideDiv2{
+        /* background-image: url("https://static.vecteezy.com/system/resources/previews/000/549/601/non_2x/abstract-background-blue-waves-particles-with-copy-space-for-your-banner-website-or-business-vector-illustration-modern-design.jpg");
+        background-size: contain; */
+        height: 400px;
+            width: 100%;
+            border: 1px solid rgb(237, 233, 233);;
+       }  
+    }
+   
+
+    @media all and (min-width:600px) and (max-width:900px) {
+        .subDiv{
+        align-items: stretch;
+        height: 70%;
+         
+       }
+   }
+    
+
+
+
+   @media all and (min-width:600px) and (max-width:900px) {
+    .btn2{
+        width: 70%;
+        height: 40px;
+        border-radius: 10px;
+        border: 0px;
+        background-color: black;
+        color: white;
+       }
+   }
+   @media all and (min-width:10px) and (max-width:599px) {
+    .btn2{
+        width: 70%;
+        height: 40px;
+        border-radius: 10px;
+        border: 0px;
+        background-color: black;
+        color: white;
+       }
+   }
+  
+
+
+   @media all and (min-width:600px) and (max-width:900px) {
+    #video>div{
+        display: grid;
+        height: 86%;
+        width: 100%;
+        grid-template-columns: repeat(3,1fr);
+        border: 1px solid rgb(237, 233, 233);;
+       }
+   }
+   @media all and (min-width:10px) and (max-width:599px) {
+    #video>div{
+        display: grid;
+        height: 86%;
+        width: 100%;
+        grid-template-columns: repeat(2,1fr);
+        border: 1px solid rgb(237, 233, 233);;
+       }
+   }
+   
     </style>
     <meta charset="UTF-8">
     <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
@@ -366,7 +468,7 @@ padding-bottom: 30px;
 <body>
  <div id="navcont">
     <div id="nav">
-        <div><img src="picfolder\logo.png"/></div>
+        <div><img width="80%" src="picfolder\logo.png"/></div>
         <div><input id="search"  type="text" placeholder="Try 'Liquid Lipstick'"/><button id="searchbtn"   >search</button></div>
         <div class="d3"> <button><a href="signup.html">Login/Register</a></button></div>
         <div><button><a href="favourites.html">♡</a></button><button><a href="cart.html">&#128717;&#65039;</a></button></div>
@@ -405,25 +507,25 @@ padding-bottom: 30px;
      <h2>----BESTSELLERS----</h2>
       <div class="subDiv"> 
            <div>
-              <img width="200px" src="https://cdn.shopify.com/s/files/1/0906/2558/products/1_529c20ee-c872-4029-9702-8580d7b9a66f.jpg?v=1640178644"/>
+              <img id="img"  src="https://cdn.shopify.com/s/files/1/0906/2558/products/1_529c20ee-c872-4029-9702-8580d7b9a66f.jpg?v=1640178644"/>
               <p>ace of face soundation stick</p>
               <h4>$999</h4>
               <button class="btn1">Like</button><button   class="btn2">add to cart</button>
             </div>
             <div>
-                <img width="200px" src="https://cdn.shopify.com/s/files/1/0906/2558/products/WBG1_09f0cf83-792a-4185-8882-5e5e6909a459.jpg?v=1657814596"/>
+                <img  id="img"  src="https://cdn.shopify.com/s/files/1/0906/2558/products/WBG1_09f0cf83-792a-4185-8882-5e5e6909a459.jpg?v=1657814596"/>
                 <p>ace of face soundation stick</p>
                 <h4>$999</h4>
                 <button class="btn1">Like</button><button class="btn2">add to cart</button>
               </div>
               <div>
-                <img width="200px" src="https://cdn.shopify.com/s/files/1/0906/2558/products/424092031-1.jpg?v=1661529396"/>
+                <img   id="img" src="https://cdn.shopify.com/s/files/1/0906/2558/products/424092031-1.jpg?v=1661529396"/>
                 <p>ace of face soundation stick</p>
                 <h4>$999</h4>
                 <button class="btn1">Like</button><button class="btn2">add to cart</button>
               </div>
               <div>
-                <img width="200px" src="https://cdn.shopify.com/s/files/1/0906/2558/products/1_6f55bcac-3e42-4253-88ee-cec0fa43c62a.jpg?v=1645608270"/>
+                <img   id="img" src="https://cdn.shopify.com/s/files/1/0906/2558/products/1_6f55bcac-3e42-4253-88ee-cec0fa43c62a.jpg?v=1645608270"/>
                 <p>ace of face soundation stick</p>
                 <h4>$999</h4>
                 <button class="btn1">Like</button><button class="btn2">add to cart</button>

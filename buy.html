@@ -49,25 +49,54 @@
         display: flex;
         justify-items: center;
     }
+    #home{
+        background-color: white;
+    }
 </style>
 </head>
 <body>
+    <h2></h2>
     <div id="cont">
         <div>
             <h4>Enter name</h4>
-            <input type="text"></div>
+            <input id="name" type="text"></div>
         <div>
             <h4>Enter Card number</h4>
-            <input type="text"></div>
+            <input id="cardnum" type="text"></div>
         <div>
             <h4>Enter CVV</h4>
-            <input type="text"></div>
+            <input id="cvv" type="number"></div>
         <div>
             <div>
                 <h4>Enter date till valid</h4>
                 </div>
-            <input type="text"></div>
-        <div><button>make payment</button></div>
+            <input id="exp" type="text"></div>
+        <div><button onClick="makePayment()">make payment</button></div>
     </div>
+    <button id="home"></button>
 </body>
 </html>
+<script>
+      function makePayment(){
+        let name=document.querySelector("#name").value
+        let cardNum=document.querySelector("#cardnum").value
+        let cdnum=Number(cardNum)
+        let cvv=document.querySelector("#cvv").value
+        let cvvnum=Number(cvv)
+        let exp=document.querySelector("#exp").value
+       
+         if(cardNum.length==16 && cdnum!=NaN && cvv.length==3 && cvvnum!=NaN && exp.length==5 && exp[2]=="/" ){
+           alert("payment successful")
+            document.querySelector("#cont").remove()
+           let btn= document.querySelector("#home")
+           btn.innerHTML="<a href='index.html'>back to shoping<a>"
+            btn.style.backgroundColor="black"
+            
+             document.querySelector("h2").innerText="payment successful.Thanks for visiting "
+        }else if(name==""||cardNum.length==0||cvv.length==0||exp.length==0|| exp.length==0){
+            alert("please fill all the details")
+        }else{
+            alert("wrong details")
+        }
+      }
+</script>
